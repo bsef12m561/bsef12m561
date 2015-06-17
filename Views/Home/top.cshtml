@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "top";
+}
+<font size="3">
+    <table style="width:800px;border-color:black;" align="center">
+
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Rated</th>
+            <th>Running Time</th>
+            <th>Year</th>
+
+
+
+        </tr>
+
+
+        @foreach (var user in Model)
+        {
+
+
+            <tr>
+                <td><a href="../Home/showMovi/?Id=@user.Id">@user.Name</a></td>
+                <td>@user.Genre</td>
+                <td>@user.Rating</td>
+                <td>@user.Rated</td>
+                <td>@user.Running_Time</td>
+                <td>@user.Year</td>
+
+
+
+
+            </tr>
+
+
+
+        }
+
+    </table>
+</font>

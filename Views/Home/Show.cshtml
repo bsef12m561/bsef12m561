@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Show";
+  
+}
+
+   <table style="width:700px;border-color:black;" border="1">
+
+    <tr>
+        <th>Name</th>
+
+        <th>Email</th>
+
+        <th>Address</th>
+
+        <th>Country</th>
+
+        <th>Password</th>
+
+        <th>Gender</th>
+        <th>Year</th>
+
+
+
+    </tr>
+
+    @foreach (var user in Model)
+    {
+
+
+        <tr>
+            <td>@user.Name</td>
+
+            <td>@user.Email</td>
+
+            <td>@user.Address</td>
+
+            <td>@user.Country</td>
+            <td>@user.Password</td>
+
+            <td>@user.Gender</td>
+
+            <td>@user.Year</td>
+            <td><a href="~/Home/delete/@user.Id">delete</a></td>
+
+
+        </tr>
+
+
+
+    }
+
+</table>

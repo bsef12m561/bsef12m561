@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+        
+    <br/>
+
+    <div>
+        <h3 style="margin-left:200px; font-weight:500 ">Sign In</h3>
+        <hr style="margin-left:200px; width:900px"/>
+    </div>
+    
+    <div style="background-color:aqua; padding:10px" class="col-lg-offset-2 col-sm-7">
+    <form action="signInTodb" class="form-horizontal" role="form" method="post">
+
+        <div class="form-group">
+            <label class="control-label col-lg-3" for="email">Email:</label>
+            <div class="col-lg-5">
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-3" for="pwd">Password:</label>
+            <div class="col-lg-5">
+                <input type="password" class="form-control" name="password" placeholder="Enter Password" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div style="margin-left:55%" class="col-lg-10">
+                <input type="submit" value="LogIn" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </form>
+</div>
