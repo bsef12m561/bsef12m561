@@ -22,7 +22,11 @@
         <div class="form-group">
             <label class="control-label col-lg-3" for="email">Email:</label>
             <div class="col-lg-4">
-                <input type="email" class="form-control" name="Email" placeholder="Enter Email" />
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter Email" />
+                <input type="button" id="b1" value="Check" class="form-control"/>
+            </div>
+            <div id="result" >
+
             </div>
         </div>
 
@@ -109,3 +113,24 @@
             </form>
             </div></div>
         </div>
+
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+        $('#b1').click(function () {
+            var Email = $('#Email').val();
+
+            $.getJSON("/Home/CheckUserEmail?Email=" + Email, function (data) {
+                if (data) {
+                    $('#result').text("Email ID already Exists.");
+
+                }
+                else
+                    $('#result').text("Available");
+
+            });
+        });
+    });
+</script>

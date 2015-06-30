@@ -4,50 +4,55 @@
 
 @model SharedLayoutExample.Models.movy
 
+<body style="background-color:lightgray">
+    <div class=" row col-lg-12">
+        <div class=" pull-right col-sm-6">
 
-<div class=" row col-lg-12">
-    <div class=" pull-right col-sm-6">
+            <font size="4"><p><strong>Name</strong></p></font>
+            @Model.Name
+            <font size="4"><p><strong>Rating</strong></p></font>
+            @Model.Rating
+            <font size="4"><p><strong>Rated</strong></p></font>
+            <strong><mark> @Model.Rated </mark></strong>
+            <font size="4"><p><strong>Running Time</strong></p></font>
+            @Model.Running_Time min
+            <font size="4"><p><strong>Genre</strong></p></font>
+            @Model.Genre
+            <font size="4"><p><strong>Year</strong></p></font>
+            @Model.Year
+            <font size="4"><p><strong>With</strong></p></font>
+            @Model.Artist1
+            <br />
+            @Model.Artist2
+            <font size="4"><p><strong>Story Line</strong></p></font>
+            @Model.Story_Line
 
-        <font size="4"><p><strong>Name</strong></p></font>
-        @Model.Name
-        <font size="4"><p><strong>Rating</strong></p></font>
-        @Model.Rating
-        <font size="4"><p><strong>Rated</strong></p></font>
-        <strong><mark> @Model.Rated </mark></strong>
-        <font size="4"><p><strong>Running Time</strong></p></font>
-        @Model.Running_Time min
-        <font size="4"><p><strong>Genre</strong></p></font>
-        @Model.Genre
-        <font size="4"><p><strong>Year</strong></p></font>
-        @Model.Year
-        <font size="4"><p><strong>With</strong></p></font>
-        @Model.Artist1
-        <br />
-        @Model.Artist2
-        <font size="4"><p><strong>Story Line</strong></p></font>
-        @Model.Story_Line
-        
+
+        </div>
+        <div class="pull-left col-sm-6">
+            @*<img src="~/Images/The Shawshank Redemption (1994).jpg" width="250" height="250"/>*@
+            <img src="@("/Images/" + Model.Name+".jpg")" width="350" height="350" />
+        </div>
+
+        <form action="~/Home/rate?movieId=@Model.Id" method="get">
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="Comment">Comment</label>
+                <div class="col-lg-4">
+                    <textarea class="form-control" name="Comment" placeholder="Write Your Comment"></textarea>
+                </div>
+            </div>
+            <div class=" form-group">
+                <label class="control-label col-lg-3" for="rate">Rate </label>
+                <div class="col-lg-4">
+                    <input type="number" class="form-control" name="rate" placeholder="Your Rating" min="1" max="10" />
+                    <input type="submit" value="Post" class="btn btn-primary" />
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    <div>
 
     </div>
-    <div class="pull-left col-sm-6">
-        @*<img src="~/Images/The Shawshank Redemption (1994).jpg" width="250" height="250"/>*@
-        <img src="@("/Images/" + Model.Name+".jpg")" width="350" height="350" />
-    </div>
-    <form action="~/Home/rate" method="get">
-        <div class="form-group">
-            <label class="control-label col-lg-3" for="comment">Comment</label>
-            <div class="col-lg-4">
-                <textarea class="form-control" name="comment" placeholder="Write Your Comment"></textarea>
-            </div>
-        </div>
-        <div class=" form-group">
-            <label class="control-label col-lg-3" for="rate">Rate </label>
-            <div class="col-lg-4">
-                <input type="number" class="form-control" name="rate" placeholder="Your Rating" min="1" max="10" />
-                <input type="submit" value="Post" class="btn btn-primary" />
-            </div>
-           
-        </div>
-           
-    </form>
-</div>
+</body>
